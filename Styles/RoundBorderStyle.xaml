@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="RoundBorder" TargetType="Border">
+
+        <Setter Property="Background" Value="{DynamicResource ColorOptionDefault}" />
+        <Setter Property="CornerRadius" Value="5" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorBorderDefault}" />
+        <Setter Property="BorderThickness" Value="2" />
+
+        <Style.Triggers>
+            <Trigger Property="Border.IsMouseOver" Value="True">
+                <Setter Property="BorderBrush" Value="{DynamicResource ColorBorderHighlight}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

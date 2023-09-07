@@ -1,0 +1,237 @@
+﻿<Window
+    x:Class="HistoricalTimeLineCreator.HistoryWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:HistoricalTimeLineCreator"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="EventWindow"
+    Width="1300"
+    Height="600"
+    AllowsTransparency="True"
+    Background="Transparent"
+    MouseDown="Window_MouseDown"
+    ResizeMode="NoResize"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <Border
+        Grid.Row="1"
+        Grid.ColumnSpan="2"
+        Background="{DynamicResource ColorBackgroundPrimary}"
+        BorderBrush="{DynamicResource ColorAlternativePrimary}"
+        BorderThickness="1"
+        CornerRadius="10">
+        <Grid x:Name="GridDescription">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <TextBox
+                x:Name="TextBoxTitle"
+                Width="350"
+                Height="50"
+                Margin="20"
+                Padding="5,0,0,0"
+                HorizontalAlignment="Left"
+                VerticalContentAlignment="Center"
+                FontSize="20"
+                Style="{DynamicResource RoundTextBox}"
+                TabIndex="0"
+                Tag="Title" />
+
+            <Button
+                x:Name="ButtonDate"
+                Width="250"
+                Height="50"
+                Margin="0,0,20,0"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                Click="ButtonDate_Click"
+                Content="Date"
+                FontSize="15"
+                Foreground="White"
+                Style="{DynamicResource RoundButton}"
+                TabIndex="2" />
+
+            <TextBox
+                x:Name="TextBoxDescription"
+                Grid.Row="1"
+                Margin="20"
+                Padding="5"
+                VerticalContentAlignment="Top"
+                AcceptsReturn="True"
+                Style="{DynamicResource RoundTextBox}"
+                TabIndex="1"
+                Tag="Description"
+                TextWrapping="Wrap"
+                VerticalScrollBarVisibility="Auto" />
+
+            <Button
+                x:Name="ButtonConfirm"
+                Grid.Row="2"
+                Height="50"
+                Margin="20"
+                Click="ButtonConfirm_Click"
+                Content="Confirm"
+                Style="{DynamicResource RoundButton}"
+                TabIndex="3" />
+
+            <Button
+                x:Name="ButtonCancel"
+                Grid.Row="2"
+                Grid.Column="1"
+                Height="50"
+                Margin="20"
+                Content="Cancel"
+                IsCancel="True"
+                Style="{DynamicResource RoundButton}"
+                TabIndex="4" />
+
+            <Button
+                x:Name="ButtonAddImage"
+                Grid.Column="1"
+                Width="100"
+                Margin="20,20,130,20"
+                HorizontalAlignment="Right"
+                Click="ButtonAddImage_Click"
+                Content="Add Image"
+                Style="{DynamicResource RoundButton}" />
+
+            <Button
+                x:Name="ButtonRemoveImage"
+                Grid.Column="1"
+                Width="100"
+                Margin="20"
+                HorizontalAlignment="Right"
+                Click="ButtonRemoveImage_Click"
+                Content="Remove Image"
+                Style="{DynamicResource RoundButton}" />
+
+            <Label
+                x:Name="LabelImage"
+                Grid.Row="1"
+                Grid.Column="1"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Content="No Image"
+                FontSize="20"
+                Foreground="Gray" />
+
+            <Image
+                x:Name="ImageHistory"
+                Grid.Row="1"
+                Grid.Column="1"
+                Margin="20" />
+
+            <Expander
+                x:Name="ColorExpander"
+                Grid.RowSpan="2"
+                Grid.Column="1"
+                Width="300"
+                Height="300"
+                Margin="19"
+                Padding="2"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Background="{DynamicResource ColorOption8}"
+                Style="{DynamicResource RoundExpanderStyle}">
+                <Border
+                    Background="{DynamicResource ColorBackgroundSecondary}"
+                    BorderBrush="{DynamicResource ColorAlternativePrimary}"
+                    BorderThickness="2"
+                    CornerRadius="20">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+
+                        <Button
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Margin="10"
+                            Background="{DynamicResource ColorOption1}"
+                            Click="ButtonColorExpander_Click"
+                            Style="{DynamicResource RoundButton}" />
+
+                        <Button
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Margin="10"
+                            Background="{DynamicResource ColorOption2}"
+                            Click="ButtonColorExpander_Click"
+                            Style="{DynamicResource RoundButton}" />
+
+                        <Button
+                            Grid.Row="0"
+                            Grid.Column="2"
+                            Margin="10"
+                            Background="{DynamicResource ColorOption3}"
+                            Click="ButtonColorExpander_Click"
+                            Style="{DynamicResource RoundButton}" />
+
+                        <Button
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Margin="10"
+                            Background="{DynamicResource ColorOption4}"
+                            Click="ButtonColorExpander_Click"
+                            Style="{DynamicResource RoundButton}" />
+
+                        <Button
+                            Grid.Row="1"
+                            Grid.Column="1"
+                            Margin="10"
+                            Background="{DynamicResource ColorOption5}"
+                            Click="ButtonColorExpander_Click"
+                            Style="{DynamicResource RoundButton}" />
+
+                        <Button
+                            Grid.Row="1"
+                            Grid.Column="2"
+                            Margin="10"
+                            Background="{DynamicResource ColorOption6}"
+                            Click="ButtonColorExpander_Click"
+                            Style="{DynamicResource RoundButton}" />
+
+                        <Button
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            Margin="10"
+                            Background="{DynamicResource ColorOption7}"
+                            Click="ButtonColorExpander_Click"
+                            Style="{DynamicResource RoundButton}" />
+
+                        <Button
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Margin="10"
+                            Background="{DynamicResource ColorOption8}"
+                            Click="ButtonColorExpander_Click"
+                            Style="{DynamicResource RoundButton}" />
+
+                        <Button
+                            Grid.Row="2"
+                            Grid.Column="2"
+                            Margin="10"
+                            Background="{DynamicResource ColorOption9}"
+                            Click="ButtonColorExpander_Click"
+                            Style="{DynamicResource RoundButton}" />
+                    </Grid>
+                </Border>
+            </Expander>
+        </Grid>
+    </Border>
+</Window>

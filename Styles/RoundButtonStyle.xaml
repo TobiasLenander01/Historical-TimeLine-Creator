@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="RoundButton" TargetType="Button">
+        <Style.Resources>
+            <Style TargetType="Border">
+                <Setter Property="CornerRadius" Value="5" />
+            </Style>
+        </Style.Resources>
+
+        <Setter Property="Foreground" Value="{DynamicResource ColorAlternativePrimary}" />
+        <Setter Property="Background" Value="{DynamicResource ColorBackgroundSecondary}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorAlternativePrimary}" />
+        <Setter Property="BorderThickness" Value="2" />
+
+    </Style>
+</ResourceDictionary>
